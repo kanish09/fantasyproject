@@ -1,0 +1,44 @@
+<div class="wrapper">
+    <div class="logo">
+      <img
+        src=""
+        alt=""
+      />
+    </div>
+    <div class="text-center mt-4 name">DREAM TEAM</div>
+    <form [formGroup]="form" (ngSubmit)="login(form)" class="p-3 mt-3">
+      <div class="form-field d-flex align-items-center">
+        <span class="far fa-user"></span>
+        <input
+          formControlName="phone"
+          type="number"
+          name="phone"
+          id="phone"
+          placeholder="Phone"
+        />
+      </div>
+      <span *ngIf="phone?.touched && phone?.invalid" class="alert alert-danger">
+        <span *ngIf="phone?.errors?.['required']">Phone No. is required</span>
+        <span *ngIf="phone?.errors?.['min']">Enter valid Phone No.</span>
+      </span>
+      <div class="form-field d-flex align-items-center">
+        <span class="fas fa-key"></span>
+        <input
+          formControlName="password"
+          type="password"
+          name="password"
+          id="pwd"
+          placeholder="Password"
+        />
+      </div>
+      <span *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
+        <span *ngIf="password?.errors?.['required']">Password is required</span>
+      </span>
+      <div *ngIf="form?.errors" class="alert alert-danger">{{msg}}</div>
+      <button class="btn mt-3">Login</button>
+    </form>
+    <div class="text-center fs-6">
+      <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+    </div>
+  </div>
+  
