@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="submit(form)">
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Tournament ID</label>
+      <div class="col-sm-10">
+        <select class="form-select" formControlName="tournament" aria-label="Default select example">
+          <option *ngFor="let item of tournaments" [value]="item.name">{{item.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Prizepool</label>
+      <div class="col-sm-10">
+        <input formControlName="prizepool" type="number" class="form-control" />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Total Player</label>
+      <div class="col-sm-10">
+        <input formControlName="totalPlayer" type="number" class="form-control" />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Winner</label>
+      <div class="col-sm-10">
+        <input formControlName="winner" type="number" class="form-control" />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+  

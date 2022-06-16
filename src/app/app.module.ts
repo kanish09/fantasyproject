@@ -21,6 +21,7 @@ import { TournamentsComponent } from './components/admin/tournaments/tournaments
 import { AddTournamentComponent } from './components/admin/tournaments/add-tournament/add-tournament.component';
 import { HomepagetournamentComponent } from './components/homepage/homepagetournament/homepagetournament.component';
 import { ContestsComponent } from './components/admin/contests/contests.component';
+import { AddcontestComponent } from './components/admin/contests/addcontest/addcontest.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ContestsComponent } from './components/admin/contests/contests.componen
     TournamentsComponent,
     AddTournamentComponent,
     HomepagetournamentComponent,
-    ContestsComponent
+    ContestsComponent,
+    AddcontestComponent
   ],
   imports: [
     BrowserModule,

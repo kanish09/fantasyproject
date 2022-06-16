@@ -14,15 +14,27 @@
   </div>
   </div>
 </div>
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">UPCOMING</button>
+      <button class="nav-link active" style="width: 100vh;" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">UPCOMING</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">JOINED</button>
+      <button class="nav-link" id="pills-profile-tab" style="width: 100vh;" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">JOINED</button>
     </li>
   </ul>
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">...</div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+      <div *ngFor="let items of tournaments" class="container">
+        {{items.name}}
+        <owl-carousel-o [options]="contestOptions">
+          <ng-template carouselSlide *ngFor="let item of contests"
+            ><div class="contests bg-dark pt-3 pb-3">
+              <div>{{item.prizepool}}</div>
+              <div>{{item.winning}}</div>
+            </div></ng-template
+          >
+        </owl-carousel-o>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">sdcsdcds</div>
  </div>

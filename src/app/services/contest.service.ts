@@ -10,4 +10,7 @@ export class ContestService {
   addContest(data: any) {
     return this.http.post(this.url + 'addcontest', data);
   }
+  getContest() {
+    return this.http.get(this.url + 'allcontest');
+  }
 }

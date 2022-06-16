@@ -27,8 +27,12 @@
 <owl-carousel-o [options]="tournamentOptions">
   <ng-template carouselSlide *ngFor="let item of tournaments"
     ><div class="tournaments">
-      <div>{{item.name}}</div>
-      <div>{{item.endDate}}</div>
+      <div class="s" style="padding: 3% 10%;">
+        <div class="row">{{item.name}}</div>
+        <div class="row">{{item.startDate}}</div>
+        <div class="row">{{item.endDate}}</div>
+      </div>
+      <button class="btn btn-info" style="float: right;">Join</button>
     </div></ng-template
   >
   <ng-template carouselSlide *ngFor="let item of tournaments"
